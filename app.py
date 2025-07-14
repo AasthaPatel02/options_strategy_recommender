@@ -1,9 +1,14 @@
+import sys
+import os
 import streamlit as st
 
 
-from scripts.strategy_rules import recommend_strategy
-from scripts.simulate_what_if import simulate_strategy
+# Ensure 'scripts' is in the path for Streamlit Cloud
+sys.path.append(os.path.join(os.path.dirname(__file__), 'scripts'))
+
 from scripts.fetch_stock_data import get_stock_data
+from scripts.simulate_what_if import simulate_strategy
+from scripts.strategy_rules import recommend_strategy
 
 # Title
 st.title("📈 Options Strategy Recommender")
